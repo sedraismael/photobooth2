@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vintage Photobooth</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Vintage Photobooth</h1>
+
+    <label>Strip Color: <input type="color" id="stripColor" value="#000000" /></label>
+    <label>Upload Photos: <input type="file" id="photoInput" multiple accept="image/*" /></label>
+
+    <label>Filter:
+      <select id="filterSelect">
+        <option value="none">None</option>
+        <option value="grayscale(1)">Grayscale</option>
+        <option value="sepia(1)">Sepia</option>
+        <option value="contrast(1.5)">High Contrast</option>
+        <option value="brightness(1.2)">Bright</option>
+        <option value="saturate(2)">Saturated</option>
+      </select>
+    </label>
+
+    <textarea id="description" placeholder="Add a vintage description..."></textarea>
+
+    <div id="date">Date: <span></span></div>
+
+    <button onclick="downloadStrip()">Download Strip</button>
+
+    <div id="strip" class="strip"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
